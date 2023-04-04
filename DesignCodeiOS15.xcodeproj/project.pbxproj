@@ -13,6 +13,7 @@
 		867FDC8F29BF085200397863 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867FDC8E29BF085200397863 /* Preview Assets.xcassets */; };
 		869952FA29CC3A4900410385 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869952F929CC3A4900410385 /* AccountView.swift */; };
 		86FBD79D29DBC7440009F69B /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FBD79C29DBC7440009F69B /* HexagonView.swift */; };
+		86FBD79F29DBCD870009F69B /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FBD79E29DBCD870009F69B /* BlobView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		867FDC8E29BF085200397863 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		869952F929CC3A4900410385 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		86FBD79C29DBC7440009F69B /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		86FBD79E29DBCD870009F69B /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				867FDC8929BF085100397863 /* ContentView.swift */,
 				869952F929CC3A4900410385 /* AccountView.swift */,
 				86FBD79C29DBC7440009F69B /* HexagonView.swift */,
+				86FBD79E29DBCD870009F69B /* BlobView.swift */,
 				867FDC8B29BF085200397863 /* Assets.xcassets */,
 				867FDC8D29BF085200397863 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86FBD79F29DBCD870009F69B /* BlobView.swift in Sources */,
 				869952FA29CC3A4900410385 /* AccountView.swift in Sources */,
 				86FBD79D29DBC7440009F69B /* HexagonView.swift in Sources */,
 				867FDC8A29BF085100397863 /* ContentView.swift in Sources */,
