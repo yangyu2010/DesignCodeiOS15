@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct BlobView: View {
+    @State var appear = false
+
     var body: some View {
         Canvas { context, size in
             context.fill(path(in: CGRect(x: 0, y: 0, width: size.width, height: size.height)), with: .linearGradient(Gradient(colors: [.pink, .blue]), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: size.width, y: size.height)))
         }
         .frame(width: 400, height: 414)
+        .rotationEffect(.degrees(appear ? 360 : 0))
+        .onAppear {
+            withAnimation(.linear(duration: 10).repeatForever(autoreverses: false)) {
+                            appear = true
+            }
+        }
     }
     
     func path(in rect: CGRect) -> Path {
