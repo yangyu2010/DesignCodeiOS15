@@ -76,23 +76,36 @@ struct TabBar: View {
                     if selectedTab == .notifications {
                         Spacer()
                     }
-
-                    
-//                    if selectedTab == .home {
-//                        Circle().fill(Color.red).frame(width: 80)
-//                    }
-//                    Spacer()
-//                    if selectedTab == .explore {
-//                        Circle().fill(Color.red).frame(width: 80)
-//                    }
-//                    Spacer()
-//                    if selectedTab == .notifications {
-//                        Circle().fill(Color.red).frame(width: 80)
-//                    }
-//                    Spacer()
-//                    if selectedTab == .library {
-//                        Circle().fill(Color.red).frame(width: 80)
-//                    }
+                }
+            )
+            .overlay(
+                HStack {
+                    if selectedTab == .library {
+                        Spacer()
+                    }
+                    if selectedTab == .explore {
+                        Spacer()
+                    }
+                    if selectedTab == .notifications {
+                        Spacer()
+                        Spacer()
+                    }
+                    Rectangle()
+                        .fill(color)
+                        .frame(width: 28, height: 5)
+                        .cornerRadius(3)
+                        .frame(width: 88)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                    if selectedTab == .home {
+                        Spacer()
+                    }
+                    if selectedTab == .explore {
+                        Spacer()
+                        Spacer()
+                    }
+                    if selectedTab == .notifications {
+                        Spacer()
+                    }
                 }
             )
 //            .strokeStyle(cornerRadius: 34)
