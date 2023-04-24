@@ -16,7 +16,7 @@ struct NavigationBar: View {
             Color.clear
                 .background(.ultraThinMaterial)
                 .blur(radius: 10)
-                .opacity(hasScrolled ? 0 : 1)
+                .opacity(hasScrolled ? 1 : 0)
             
             Text(title)
                 .animatableFont(size: hasScrolled ? 22 : 34, weight: .bold)
