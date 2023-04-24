@@ -18,7 +18,18 @@ struct HomeView: View {
                 Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
             }
             
-            FeaturedItem()
+            TabView {
+                ForEach(courses) { item in
+                    FeaturedItem(course: item)
+                }
+            }
+//            .tabViewStyle(.page(indexDisplayMode: .never))
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            .frame(height: 430)
+            .background(
+                Image("Blob 1")
+                    .offset(x: 250, y:-100)
+            )
             
             Color.clear.frame(height: 1000)
         }
@@ -33,7 +44,6 @@ struct HomeView: View {
         })
         .overlay {
             NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
-                
         }
     }
 
