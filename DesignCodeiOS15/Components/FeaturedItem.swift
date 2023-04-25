@@ -41,10 +41,8 @@ struct FeaturedItem: View {
         .padding(.all, 20.0)
         .padding(.vertical ,20.0)
         .frame(height: 350)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
-//        .cornerRadius(30)
-//        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
-        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+        .background(.ultraThinMaterial)
+        .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .overlay (
             RoundedRectangle(cornerRadius: 30, style: .continuous)
                 .stroke(.linearGradient(colors: [.white.opacity(0.3), .black.opacity(0.1)], startPoint: .top, endPoint: .bottom))
@@ -52,14 +50,6 @@ struct FeaturedItem: View {
 //                .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .bevel, miterLimit: .infinity, dash: [20, 20], dashPhase: 20))
         )
         .padding(.horizontal ,20.0)
-        .overlay {
-            Image(course.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 230)
-                .offset(x: 32, y: -80)
-            
-        }
     }
 
 }
