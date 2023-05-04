@@ -11,25 +11,27 @@ struct HomeView: View {
     @State private var hasScrolled = false
     
     var body: some View {
-        ScrollView {
-            
-            scrollDetection
+        
+        ZStack {
+            Color("Background").ignoresSafeArea()
 
-            featured
-            
-            Color.clear.frame(height: 1000)
-        }
-        .coordinateSpace(name: "scroll")
-        .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
-            withAnimation(.easeInOut) {
-                hasScrolled = value < 0
+            ScrollView {
+                scrollDetection
+                featured
+                Color.clear.frame(height: 1000)
             }
-        })
-        .safeAreaInset(edge: .top, content: {
-            Color.clear.frame(height: 70)
-        })
-        .overlay {
-            NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
+            .coordinateSpace(name: "scroll")
+            .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
+                withAnimation(.easeInOut) {
+                    hasScrolled = value < 0
+                }
+            })
+            .safeAreaInset(edge: .top, content: {
+                Color.clear.frame(height: 70)
+            })
+            .overlay {
+                NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
+            }
         }
     }
 
