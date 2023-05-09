@@ -13,6 +13,7 @@
 		860C2B7229F133FC006E9C50 /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C2B7129F133FC006E9C50 /* PreferenceKeys.swift */; };
 		860C2B7429F13C19006E9C50 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C2B7329F13C19006E9C50 /* AnimatableFontModifier.swift */; };
 		860DCDB12A03B60000DDBFA0 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DCDB02A03B60000DDBFA0 /* MatchedView.swift */; };
+		864BED4E2A0A2D8600493E85 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864BED4D2A0A2D8600493E85 /* Animations.swift */; };
 		867FDC8829BF085100397863 /* DesignCodeiOS15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867FDC8729BF085100397863 /* DesignCodeiOS15App.swift */; };
 		867FDC8A29BF085100397863 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867FDC8929BF085100397863 /* ContentView.swift */; };
 		867FDC8C29BF085200397863 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 867FDC8B29BF085200397863 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		860C2B7129F133FC006E9C50 /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		860C2B7329F13C19006E9C50 /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
 		860DCDB02A03B60000DDBFA0 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
+		864BED4D2A0A2D8600493E85 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		867FDC8429BF085100397863 /* DesignCodeiOS15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeiOS15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		867FDC8729BF085100397863 /* DesignCodeiOS15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeiOS15App.swift; sourceTree = "<group>"; };
 		867FDC8929BF085100397863 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				86BE1A1729E6A77D009928B8 /* Styles.swift */,
+				864BED4D2A0A2D8600493E85 /* Animations.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				860420E029EFDDA300485621 /* FeaturedItem.swift in Sources */,
 				860C2B7229F133FC006E9C50 /* PreferenceKeys.swift in Sources */,
 				86DC80782A0A1C1E00550AC5 /* CourserView.swift in Sources */,
+				864BED4E2A0A2D8600493E85 /* Animations.swift in Sources */,
 				867FDC8829BF085100397863 /* DesignCodeiOS15App.swift in Sources */,
 				86DC80762A0A1B6000550AC5 /* CourserItem.swift in Sources */,
 				860C2B7429F13C19006E9C50 /* AnimatableFontModifier.swift in Sources */,

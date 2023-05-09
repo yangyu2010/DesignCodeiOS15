@@ -11,6 +11,7 @@ struct HomeView: View {
     @State private var hasScrolled = false
     @Namespace private var namespace
     @State private var show = false
+    @State private var showStatusBar = true
 
     var body: some View {
         ZStack {
@@ -28,7 +29,7 @@ struct HomeView: View {
                 if show == false {
                     CourserItem(namespace: namespace, show: $show)
                         .onTapGesture {
-                            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                            withAnimation(.openCard) {
                                 show.toggle()
                             }
                         }
@@ -51,6 +52,16 @@ struct HomeView: View {
                 CourserView(namespace: namespace, show: $show)
             }
         }
+        .onChange(of: show, perform: { newValue in
+            withAnimation(.closeCard) {
+                if newValue {
+                    showStatusBar = false
+                } else {
+                    showStatusBar = true
+                }
+            }
+        })
+        .statusBar(hidden: !showStatusBar)
     }
 
     var scrollDetection: some View {
