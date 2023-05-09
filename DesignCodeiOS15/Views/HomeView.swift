@@ -13,14 +13,13 @@ struct HomeView: View {
     @State private var show = false
 
     var body: some View {
-        
         ZStack {
             Color("Background").ignoresSafeArea()
 
             ScrollView {
                 scrollDetection
                 featured
-                
+
                 Text("Courses".uppercased())
                     .font(.footnote.weight(.semibold))
                     .foregroundColor(.secondary)
@@ -47,7 +46,7 @@ struct HomeView: View {
             .overlay {
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
             }
-            
+
             if show {
                 CourserView(namespace: namespace, show: $show)
             }
@@ -60,7 +59,7 @@ struct HomeView: View {
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
     }
-    
+
     var featured: some View {
         TabView {
             ForEach(courses) { course in
@@ -69,17 +68,17 @@ struct HomeView: View {
 
                     FeaturedItem(course: course)
                         .padding(.vertical, 40)
-                    .rotation3DEffect(.degrees(minX / -10), axis: (x: 0, y: 1, z: 0))
-                    .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
-                    .blur(radius: abs(minX / 40))
-                    .overlay {
-                        Image(course.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 230)
-                            .offset(x: 32, y: -80)
-                            .offset(x: minX / 2)
-                    }
+                        .rotation3DEffect(.degrees(minX / -10), axis: (x: 0, y: 1, z: 0))
+                        .shadow(color: Color("Shadow").opacity(0.3), radius: 10, x: 0, y: 10)
+                        .blur(radius: abs(minX / 40))
+                        .overlay {
+                            Image(course.image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 230)
+                                .offset(x: 32, y: -80)
+                                .offset(x: minX / 2)
+                        }
                 }
             }
         }
@@ -87,7 +86,7 @@ struct HomeView: View {
         .frame(height: 430)
         .background(
             Image("Blob 1")
-                .offset(x: 250, y:-100)
+                .offset(x: 250, y: -100)
         )
     }
 }

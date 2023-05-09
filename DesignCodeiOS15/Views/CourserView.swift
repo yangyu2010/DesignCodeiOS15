@@ -14,7 +14,7 @@ struct CourserView: View {
     var body: some View {
         ZStack {
             ScrollView {
-               cover
+                cover
             }
             .background(Color("Background"))
             .ignoresSafeArea()
@@ -35,10 +35,8 @@ struct CourserView: View {
             .padding(.top, 20)
             .ignoresSafeArea()
         }
-        
-        
     }
-    
+
     var cover: some View {
         VStack {
             Spacer()
@@ -61,7 +59,6 @@ struct CourserView: View {
         .mask {
             RoundedRectangle(cornerRadius: 30, style: .continuous)
                 .matchedGeometryEffect(id: "mask", in: namespace)
-            
         }
         .overlay {
             VStack(alignment: .leading, spacing: 12) {
@@ -76,7 +73,6 @@ struct CourserView: View {
                 Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
                     .font(.footnote)
                     .matchedGeometryEffect(id: "text", in: namespace)
-
 
                 Divider()
 
@@ -103,14 +99,13 @@ struct CourserView: View {
             }
             .offset(y: 250)
             .padding(20)
-
         }
     }
 }
 
 struct CourserView_Previews: PreviewProvider {
     @Namespace static var namespace
-    
+
     static var previews: some View {
         CourserView(namespace: namespace, show: .constant(false))
     }

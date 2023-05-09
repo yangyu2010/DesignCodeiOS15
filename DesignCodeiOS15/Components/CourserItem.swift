@@ -10,7 +10,7 @@ import SwiftUI
 struct CourserItem: View {
     var namespace: Namespace.ID
     @Binding var show: Bool
-    
+
     var body: some View {
         VStack {
             Spacer()
@@ -19,7 +19,7 @@ struct CourserItem: View {
                     .font(.largeTitle.weight(.bold))
                     .matchedGeometryEffect(id: "title", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                
+
                 Text("20 sections - 3 hours".uppercased())
                     .font(.footnote.weight(.semibold))
                     .matchedGeometryEffect(id: "subtitle", in: namespace)
@@ -63,7 +63,7 @@ struct CourserItem: View {
 
 struct CourserItem_Previews: PreviewProvider {
     @Namespace static var namespace
-    
+
     static var previews: some View {
         CourserItem(namespace: namespace, show: .constant(false))
     }
