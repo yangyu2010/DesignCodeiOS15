@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var hasScrolled = false
-    
+    @Namespace private var namespace
+    @State private var show = false
+
     var body: some View {
         
         ZStack {
@@ -18,7 +20,20 @@ struct HomeView: View {
             ScrollView {
                 scrollDetection
                 featured
-                Color.clear.frame(height: 1000)
+                
+                Text("Courses".uppercased())
+                    .font(.footnote.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 20)
+                if show == false {
+                    CourserItem(namespace: namespace, show: $show)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                                show.toggle()
+                            }
+                        }
+                }
             }
             .coordinateSpace(name: "scroll")
             .onPreferenceChange(ScrollPreferenceKey.self, perform: { value in
@@ -31,6 +46,10 @@ struct HomeView: View {
             })
             .overlay {
                 NavigationBar(title: "Featured", hasScrolled: $hasScrolled)
+            }
+            
+            if show {
+                CourserView(namespace: namespace, show: $show)
             }
         }
     }
