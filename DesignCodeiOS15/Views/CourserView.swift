@@ -10,16 +10,38 @@ import SwiftUI
 struct CourserView: View {
     var namespace: Namespace.ID
     @Binding var show: Bool
-
+    @State var appear = [false, false, false]
+    
     var body: some View {
         ZStack {
             ScrollView {
                 cover
+                
+                content
+                    .offset(y: 100)
+                    .padding(.top, 30)
+                    .padding(.bottom, 200)
+                    .opacity(appear[2] ? 1 : 0)
             }
             .background(Color("Background"))
             .ignoresSafeArea()
 
             button
+        }.onAppear {
+            withAnimation(.easeOut.delay(0.3)) {
+                appear[0] = true
+            }
+            withAnimation(.easeOut.delay(0.4)) {
+                appear[1] = true
+            }
+            withAnimation(.easeOut.delay(0.5)) {
+                appear[2] = true
+            }
+        }
+        .onChange(of: show) { newValue in
+            appear[0] = false
+            appear[1] = false
+            appear[2] = false
         }
     }
 
@@ -61,7 +83,7 @@ struct CourserView: View {
                     .matchedGeometryEffect(id: "text", in: namespace)
 
                 Divider()
-
+                    .opacity(appear[0] ? 1 : 0)
                 HStack {
                     Image("Avatar Default")
                         .resizable()
@@ -73,6 +95,7 @@ struct CourserView: View {
                     Text("Taught by Meng to")
                         .font(.footnote)
                 }
+                .opacity(appear[1] ? 1 : 0)
             }
             .padding(20)
             .background {
@@ -86,6 +109,20 @@ struct CourserView: View {
             .offset(y: 250)
             .padding(20)
         }
+    }
+    
+    var content: some View {
+        VStack(alignment: .leading, spacing: 30) {
+            Text("SwiftUI is hands-down the best way for designers to take a first step into code. ")
+                .font(.title3.weight(.medium))
+            
+            Text("This course")
+                .font(.title.bold())
+            
+            Text("This course is unlike any other. We care about design and want to make sure that you get better at it in the process. It was written for designers and developers who are passionate about collaborating and building real apps for iOS and macOS. While it's not one codebase for all apps, you learn once and can apply the techniques and controls to all platforms with incredible quality, consistency and performance. It's beginner-friendly, but it's also packed with design tricks and efficient workflows for building great user interfaces and interactions.")
+
+        }
+        .padding(.horizontal, 20)
     }
     
     
